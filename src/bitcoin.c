@@ -161,6 +161,7 @@ bool gen_gbtbase(connsock_t *cs, gbtbase_t *gbt)
 	previousblockhash = json_string_value(json_object_get(res_val, "previousblockhash"));
 	target = json_string_value(json_object_get(res_val, "target"));
 	version = json_integer_value(json_object_get(res_val, "version"));
+	version &= ~0x00800000;
 	curtime = json_integer_value(json_object_get(res_val, "curtime"));
 	bits = json_string_value(json_object_get(res_val, "bits"));
 	height = json_integer_value(json_object_get(res_val, "height"));
